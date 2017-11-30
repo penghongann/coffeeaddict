@@ -1,0 +1,364 @@
+body, html {
+    height: 100%;
+    background-color: #2A2A2A !important;
+    line-height: 1 !important;
+}
+
+
+.header { 
+    background-image: url("assets/background.png");
+
+    height: 100%; 
+    width:100%;
+    /*position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+    
+
+
+
+/*customize nav font */
+.nav{
+  float:right;
+  margin-top:2%;
+  margin-right:2%;
+}
+
+#nav-custom{
+	color:white;
+}
+
+.nav_img{
+  height:20px;
+  margin-right:8px;
+  display:inline-block;
+  vertical-align: text-bottom;
+}
+
+/***************styling for the home page******************/
+.coffeeType{
+  padding:8% 4% !important;
+  vertical-align:bottom !important;
+}
+
+.fade{
+  opacity: .5;
+  filter: gray; 
+  -webkit-filter: grayscale(100%); 
+}
+
+.coffeeType:hover{
+    /*box-shadow: 0px 0px 150px #000000;*/
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
+
+#hovered_type{
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    color: white;
+}
+
+#hovered_text{
+  font-size:3rem;
+  font-weight: 500;
+  visibility:hidden;
+}
+
+.overlap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2A2A2A;
+    opacity: .95;
+    z-index: 999;
+    visibility:hidden;
+}
+
+.overlay__back {
+    width: 100%;
+    max-width: 150px;
+    font-size: 1rem;
+    cursor: pointer;
+    display:block;
+    margin-top:4%;
+    margin-left: 5%;
+}
+
+.back{
+  color:white;
+  display:inline-block;
+  margin-left:15%;
+  font-weight: 10;
+}
+
+.overlay_section{
+  width:100%;
+  margin-top:4%;
+  margin-left: 5%;
+  display:block;
+}
+
+.overlay_title{
+  width:100%;
+  display:block;
+  
+}
+
+.overlay_title h1{
+  color: white;
+  font-weight: 500;
+}
+
+.overlay_details{
+  margin-top:5%;
+  background-color:white;
+  width:80%;
+  border-radius:50px;
+  height:350px;
+}
+
+.left{
+  width:30%;
+  padding-top:5%;
+  padding-left:5%;
+  margin-left:5%;
+  display:inline-block;
+
+}
+
+.left input{
+  border:none !important;
+  background:none !important;
+  font-size:4rem;
+  font-weight:500;
+  display:inline-block;
+  width:30%;
+  color:#303030;
+  padding:0 !important;
+}
+
+.left span{
+  font-size:2rem;
+  vertical-align: baseline;
+  font-weight: 400;
+}
+
+.left p{
+  display: inline-block;
+}
+
+.left img{
+  width:22%;
+  vertical-align: top !important;
+  margin-left:3%;
+  display:inline-block;
+}
+
+.right{
+  float:right;
+  width:30%;
+  padding-top:5%;
+  padding-right:5%;
+  display: inline-block;
+}
+
+.right input{
+  border:none !important;
+  background:none !important;
+  font-size:4rem;
+  font-weight:500;
+  display:inline-block;
+  width:30%;
+  color:#303030;
+  padding:0 !important;
+}
+
+.right span{
+  font-size:2rem;
+  vertical-align: baseline;
+  font-weight: 400;
+}
+
+.right img{
+  width:25%;
+  vertical-align: top !important;
+  margin-left:3%;
+  display:inline-block;
+}
+
+.intro{
+  width:88%;
+  padding-left:10%;
+  margin-top: 1%;
+  font-weight:250;
+}
+
+.intro p{
+  font-size:24px;
+  font-weight:220;
+  line-height: 150%;
+}
+
+
+
+
+
+/***************styling for the fun fact page******************/
+.callout{
+	width:100%;
+	margin-top: 20%;
+	vertical-align: center;
+	text-align: center;
+}
+
+
+#question{
+	color: white;
+	font-size: 3em;
+	font-weight:200;
+	vertical-align: middle;
+}
+
+#down_arrow{
+  vertical-align: bottom !important;
+  height:40px;
+}
+
+.quiz-section{
+    width: 100%;
+}
+
+.question1{
+  padding-top: 20%;
+  padding-left: 10%;
+}
+
+#quiz-question{
+	display: inline-block;
+  color: white;
+  font-weight: 200;
+}
+
+
+#quiz-button{
+	background-color: #2A2A2A;
+    width: 20%;
+    border-radius: 0;
+    border-bottom: 2px solid #FFF;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align:top;
+
+}
+
+
+
+#answerOne{
+	float:right;
+	padding-top: 10%;
+}
+
+#answerTwo{
+  float: right;
+  margin-top: 20%;
+  margin-right: 5%;
+  padding-bottom:10%;
+}
+
+#answerThree{
+	  float: right;
+    margin-top: 30%;
+    margin-right: 5%;
+    padding-bottom: 20%
+}
+
+#correct_one{
+  color:white;
+  font-weight:200;
+  margin-top:2%;
+  visibility: hidden;
+}
+
+#correct_two{
+  color:white;
+  font-weight:200;
+  margin-top:2%;
+  visibility: hidden;
+}
+
+#correct_three{
+  color:white;
+  font-weight:200;
+  margin-top:2%;
+  visibility: hidden;
+}
+
+#answerOne{
+  visibility: hidden;
+
+}
+
+#answerTwo{
+  visibility: hidden;
+   
+}
+
+#answerThree{
+  visibility: hidden;
+   
+}
+
+/*****************responsive font***********************/
+p {
+  font-size: 28px;
+}
+
+@include media-breakpoint-up(sm) {
+  p {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  p {
+    font-size: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  p {
+    font-size: 28px;
+  }
+}
+
+
+
+
+
+
+
+
+
+

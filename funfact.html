@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Coffee Addict</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- customized css -->
+    <link rel="stylesheet" type="text/css" href="main.css" >
+    <!--  jquery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- anime javascript -->
+    <script src="anime.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+  <body>
+
+    <div class="header">
+      <!-- navigation bar -->
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" id="nav-custom" href="index.html" ><img class='nav_img' src="assets/cup.png">Type</a>
+        </li>
+        <li class="nav-item" id="nav-custom">
+          <a class="nav-link" id="nav-custom" href="#" ><img class='nav_img' src="assets/gift.png">Fun Facts</a>
+        </li>
+      </ul>
+
+      <div class="callout">
+        <h3 id="question">Do you really know about your coffee?</h3>
+        <br>
+        <br>
+        <br>
+        <a href="#quiz-section-one"><img id='down_arrow' src="assets/arrow.png"></a>
+      </div>
+
+    </div>
+
+   <!--  Quiz Question One -->
+    <div class="quiz-section" id="quiz-section-one">
+      <div class="row">
+        <div class="col-sm-8 dropdown question1">
+          <p id="quiz-question">The majority of coffee is produced in </p>
+          <button id="quiz-button" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li class="dropdown-item selectorOne" value='brazil' href="#">Brazil</li>
+            <li class="dropdown-item selectorOne" value='Cuba' href="#">Cuba</li>
+            <li class="dropdown-item selectorOne" value='Mexico' href="#">Mexico</li>
+          </div>
+          <br><p id="correct_one">YES! You know too much!</p>
+        </div>
+        <div class="col-sm-4">
+          <img src="assets/brazil.png" id="answerOne" alt="Brazil">
+        </div>
+      </div>
+      
+    </div>
+
+
+  	<!--  Quiz Question Two -->
+  	<div class="quiz-section">
+      <div class="row">
+        <div class="col-sm-7 dropdown question1">
+          <p id="quiz-question">Caffeine starts working in just </p>
+          <button id="quiz-button" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li class="dropdown-item selectorTwo" value ='hours' href="#">Hours</li>
+            <li class="dropdown-item selectorTwo" value ='minutes' href="#">Minutes</li>
+            <li class="dropdown-item selectorTwo" value ='never' href="#">Never</li>
+          </div>
+          <br><p id="correct_two">YES! You know too much!</p>
+        </div>
+        <div class="col-sm-5">
+          <img src="assets/clock.png" id="answerTwo" alt="Clock">
+        </div>
+      </div>
+    </div>
+    
+
+    <!--  Quiz Question Three -->
+    <div class="quiz-section">
+      <div class="row">
+        <div class="col-sm-6 dropdown question1">
+          <p id="quiz-question">Energy drinks often have </p>
+          <button id="quiz-button" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li class="dropdown-item selectorThree" value='more' href="#">More</li>
+            <li class="dropdown-item selectorThree" value='less' href="#">Less</li>
+            <li class="dropdown-item selectorThree" value='same' href="#">Same</li>
+          </div>
+          <p id="quiz-question"> caffeine than  coffee.</p>
+          <br><p id="correct_three">YES! You know too much!</p>
+        </div>         
+        <div class="col-sm-6">
+          <img src="assets/seesaw.png" id="answerThree" alt="See Saw">
+        </div>
+      </div>
+    </div>
+
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  </body>
+</html>
