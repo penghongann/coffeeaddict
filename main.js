@@ -12,7 +12,50 @@ var typeArray = [
 	{type:"Caffè Frappe", description:"Frappé coffee also known as Greek frappé is a foam-covered iced coffee drink made from instant coffee (generally, spray-dried). It is very popular in Greece and Cyprus, especially during the summer, but has now spread to other countries."},
 ]
 
-function valueChange(){
+//typing effect 
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+// number animation for iced coffee, decaf and cappuccino
+function valueChange_iced(){
     
 
     var general_change = anime({
@@ -24,6 +67,22 @@ function valueChange(){
                         autoplay: false
                         });
     general_change.play();
+
+}
+
+// number animation for chocolate
+function valueChange_choco(){
+    
+
+    var choco_change = anime({
+                        targets: '.number',
+                        
+                        value: 120,
+                        round: 1,
+                        easing: 'easeInOutExpo',
+                        autoplay: false
+                        });
+    choco_change.play();
 
 }
 
@@ -69,6 +128,34 @@ function valueChange_latte(){
 
 }
 
+// number animation for americano and long black
+function valueChange_amer(){
+    
+
+    var coffee_change = anime({
+                        targets: '#expresso_value',
+                        
+                        value: 60,
+                        round: 1,
+                        easing: 'easeInOutExpo',
+                        autoplay: false
+                        });
+    coffee_change.play();
+
+    var water_change = anime({
+                        targets: '#milk_value',
+                        
+                        value: 120,
+                        round: 1,
+                        easing: 'easeInOutExpo',
+                        autoplay: false
+                        });
+    water_change.play();
+
+}
+
+
+
  function valueReset(){
     var general_reset = anime({
                         targets: '.number',
@@ -78,7 +165,7 @@ function valueChange_latte(){
                         duration:0,
                         autoplay: false
                         });
-    general_change.play();
+    general_reset.play();
  }
 
 function jumpingArrow(){
@@ -96,10 +183,27 @@ function jumpingArrow(){
 
 /////////////////////load document///////////////////
 $(document).ready(function() {
-    console.log( "ready!" );
 
+    //typing effect on funfact page
+    var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+
+    //arrow jumping effect on funfact page
     jumpingArrow();
-    
+
+
+    //show names dynamically on home page
     $('.fade_hov').hover(function(){
     					// greyscale other icons when one coffee icon is hovered
                         $(this).siblings().addClass('fade');
@@ -116,10 +220,9 @@ $(document).ready(function() {
                 });
 
 
- 
+    //load div dynamically on home page
     $( ".fade_hov" ).each(function() {
       $(this).on("click", function(){
-    // $('.fade_hov').on('click', function(){
                         $('.overlap').css("visibility","visible");
 
 
@@ -128,48 +231,74 @@ $(document).ready(function() {
                         $('#coffee_title').text(typeArray[y].type);
                         $('#coffee_details').text(typeArray[y].description);
 
-                        
-                        if((y==1) || (y==2) || (y==4) || (y==7)){
+                        //if clicking on iced coffee or decaf
+                        if((y==1)  || (y==7)){
                           $('.right').hide();
-
-                          $(function(){
-                          valueChange();
-                          });
+                          valueChange_iced();
 
                         }
+                        //if clicking on expresso
                         else if(y==0){
                           $('.right').hide();
 
-                          $(function(){
                           valueChange_espresso();
-                          });
 
                         }
+                        //if clicking on americano or long black
+                        else if((y==2) || (y==4)){
+
+                          valueChange_amer();
+                          $('#milk_label').text('Hot Water');
+                          $("#milk_value").css("width","40%");
+                          $("#milk_img").attr('src', 'assets/kettle.png');
+                          
+                        }
+                        //if clicking on latte
                         else if(y==3){
-                          $('.right').show();
 
-                          $(function(){
                             valueChange_latte();
-                          });
-
+                          
                           $("#milk_value").css("width","40%");
                         }
+                        //if clicking on mocca
+                        else if(y==5){
+                          valueChange_iced();
+                          $('#milk_label').text('Chocolate');
+                          $("#milk_img").attr('src', 'assets/chocolate2.png');
+                        }
+                        //if clicking on cappuccino
+                        else if(y==6){
+                          valueChange_iced();
+                        }
+                        //if clicking on chocolate
                         else{
-                          $('.right').show();
-
-                          $(function(){
-                            valueChange();
-                          });
+                          $('.right').hide();
+                          valueChange_choco();
+                          $('#expresso_label').text('Chocolate');
+                          $("#expresso_img").attr('src', 'assets/chocolate2.png');
+                          $("#expresso_value").css("width","40%");
+                          
 
                         }                         
 
     });
     });
                        
-  //back button//
+  //back button, remove div and reset//
   $('.overlay__back').on('click', function(){
                         $('.overlap').css("visibility","hidden");
+                        //reset input value to 0
                         valueReset();
+                        //reset everything in the ingredient div to default
+                        $('.right').show();
+                        $('#expresso_label').text('Expresso');
+                        $("#expresso_img").attr('src', 'assets/coffee.png');
+                        $('#milk_label').text('Steam Milk');
+                        $("#milk_value").css("width","30%");
+                        $("#milk_img").attr('src', 'assets/milk.png');
+                        console.log($('#milk_label').text());
+
+
 
   });
 

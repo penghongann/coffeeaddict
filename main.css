@@ -46,6 +46,10 @@ body, html {
 
 
 /***************styling for the home page******************/
+.type_section{
+  margin-top: 5%;
+}
+
 .coffeeType{
   padding:8% 4% !important;
   vertical-align:bottom !important;
@@ -72,7 +76,7 @@ body, html {
 
 #hovered_type{
     position: absolute;
-    top: 45%;
+    top: 48%;
     left: 13%;
     color: white;
 }
@@ -225,6 +229,13 @@ body, html {
 
 
 /***************styling for the fun fact page******************/
+.typewrite{
+  color: white;
+  font-size: 2em;
+  font-weight:200;
+  vertical-align: middle;
+}
+
 .callout{
 	width:100%;
 	margin-top: 20%;
@@ -232,13 +243,6 @@ body, html {
 	text-align: center;
 }
 
-
-#question{
-	color: white;
-	font-size: 3em;
-	font-weight:200;
-	vertical-align: middle;
-}
 
 #down_arrow{
   vertical-align: bottom !important;
@@ -269,8 +273,13 @@ body, html {
     color: white;
     text-decoration: none;
     display: inline-block;
-    vertical-align:top;
+    vertical-align:text-bottom;
 
+}
+
+.caret{
+  margin-left: 90%;
+  vertical-align: baseline !important;
 }
 
 
