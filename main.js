@@ -86,6 +86,32 @@ function valueChange_choco(){
 
 }
 
+// number animation for frappe
+function valueChange_frappe(){
+    
+
+    var coffee_change = anime({
+                        targets: '#expresso_value',
+                        
+                        value: 60,
+                        round: 1,
+                        easing: 'easeInOutExpo',
+                        autoplay: false
+                        });
+    coffee_change.play();
+
+    var milk_change = anime({
+                        targets: '#milk_value',
+                        
+                        value: 30,
+                        round: 1,
+                        easing: 'easeInOutExpo',
+                        autoplay: false
+                        });
+    milk_change.play();
+
+}
+
 // number animation for expresso
 function valueChange_espresso(){
     
@@ -269,6 +295,10 @@ $(document).ready(function() {
                         //if clicking on cappuccino
                         else if(y==6){
                           valueChange_iced();
+                        }
+                        //if clicking on cappuccino
+                        else if(y==9){
+                          valueChange_frappe();
                         }
                         //if clicking on chocolate
                         else{
