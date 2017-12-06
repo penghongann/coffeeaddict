@@ -12,6 +12,9 @@ var typeArray = [
 	{type:"Caffè Frappe", description:"Frappé coffee also known as Greek frappé is a foam-covered iced coffee drink made from instant coffee (generally, spray-dried). It is very popular in Greece and Cyprus, especially during the summer, but has now spread to other countries."},
 ]
 
+
+
+
 //typing effect 
 var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -207,8 +210,14 @@ function jumpingArrow(){
 
 
 
+
 /////////////////////load document///////////////////
 $(document).ready(function() {
+
+	$('.button1').on("click", function(){
+		$('.cover').remove();
+	});
+
 
     //typing effect on funfact page
     var elements = document.getElementsByClassName('typewrite');

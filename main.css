@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
 body, html {
     height: 100%;
     background-color: #2A2A2A !important;
@@ -5,23 +7,198 @@ body, html {
 }
 
 
-.header { 
-    background-image: url("assets/background.png");
+/****************styling for the cover page***************/
+.cover{
+	width:100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:#2A2A2A;
+    z-index: 999;
+ 	display: flex;
+ }
 
-    height: 100%; 
-    /*width:100%;*/
-    /*position: absolute;
+
+
+.inner{
+    width: 100%;
+    margin-left: 15%;
+    margin-top: 20%;
+    position: absolute;
+    background-color: #2A2A2A;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.title-block{
+	display: inline-block;
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 40px;
+}
+
+
+.site-title{
+	font-size:2rem;
+	color:white;
+	display: inline-block;;
+}
+
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake{
+	font-family: 'Gloria Hallelujah', cursive;
+	margin-left: 10px;
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 0.8s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+@keyframes wave {
+  0% {opacity: 0; transform: translateY(15px)}
+  50% {opacity: 1; transform: translateY(0)}
+  100% {opacity: 0; transform: translateY(-15px)}
+}
+
+.loader{
+	margin-left:15%;
+	display: inline-block;
+}
+
+.loader ul {
+  margin: 0 0 10px 0;
+  padding: 0;
+  list-style: none;
+  width: 60px;
+  text-align: center;
+  animation: wave 2.5s infinite linear;
+  animation-fill-mode: forwards;
+}
+.loader li {
+  display: inline-block;
+  background: #FAF1D9;
+  height: 30px;
+  width: 9px;
+  border-radius: 0 100%;
+  transform: rotate(12deg);
+}
+.cup {
+  background: white;
+  width: 60px;
+  height: 54px;
+  border-radius: 0 0 50% 50%;
+  position: relative;
+}
+.cup:before {
+  content: "";
+  position: absolute;
+  width: 66px;
+  height: 20px;
+  border-radius: 50%;
+  background: inherit;
+  left: -3px;
+  top: -10px;
+}
+.cup:after {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3A2F28;
+  left: 2px;
+  top: -6px;
+}
+.loader span {
+  background: white;
+  width: 13px;
+  height: 20px;
+  position: absolute; 
+  right: -13px;
+  top: 10px;
+  border-radius: 0 50% 50% 0;
+}
+.loader span:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  background: #2A2A2A;
+  width: 10px;
+  height: 12px;
+  border-radius: 0 50% 50% 0;
+}
+.loader span:after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: -50px;
+  background: white;
+  width: 40px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+
+
+.button1 {
+	background-color: #2A2A2A;
+    border-radius: 40px;
+    border: 2px solid #FFF;
+    width: 250px;
+    height: 50px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    z-index: 1000;
+    display: block;
+    margin-top: 30%;
+}
+
+.button1:hover {
+    background-color: #fff;
+    color: #2A2A2A;
+}
+
+
+/*************end of cover page*******************/
+
+
+.header { 
+	/*position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;*/
+    background-image: url("assets/background.png");
+
+    height: 100%; 
+    width:100%;
+
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;*/
+
     overflow: auto;
   }
     
@@ -46,6 +223,8 @@ body, html {
 
 
 /***************styling for the home page******************/
+
+
 .type_section{
   margin-top: 5%;
 }
@@ -342,6 +521,15 @@ body, html {
 /*****************responsive font***********************/
 /*Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767px) {
+
+	.inner{
+		margin-left: auto;
+	}
+
+	.button1{
+		margin-top: 100%;
+	}
+
   .type_section{
     margin-top: 5%;
     margin-left: 50px;
@@ -399,7 +587,15 @@ body, html {
 
 
 /*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+	.inner{
+		margin-left: auto;
+	}
+
+	.button1{
+		margin-top: 40%;
+	}
+
   #coffee_details{
     font-size:20px;
   }
@@ -412,9 +608,9 @@ body, html {
     font-size:2rem;
   }
 
-  .header{
+/*  .header{
     height:60%;
-  }
+  }*/
 
 
 }
